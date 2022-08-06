@@ -3,8 +3,26 @@
 
 <mapper namespace="Member">
 	<select id = "checkId" parameterType="string" resultType="_int">
-		SELECT COUNT(ID) FROM TBL_MEMBER
-		WHERE MEMBERID = #{memberId}
+		SELECT COUNT(memberId) FROM TBL_MEMBER
+		WHERE memberId = #{memberId}
+	</select>
+	
+	<insert id="join" parameterType="member">
+		INSERT INTO TBL_MEMBER
+		(
+			memberId, memberPw, memberAge, memberGender, memberEmail,
+		    memberZipcode, memberAddress, memberAddressDetail, memberAddressEtc
+		)	
+		VALUES
+		(
+			#{memberId}, #{memberPw}, #{memberAge}, #{memberGender}, #{memberEmail},
+			#{memberZipcode}, #{memberAddress}, #{memberAddressDetail}, #{memberAddressEtc}
+		)
+	</insert>
+	
+	<select id="login" parameterType="map" resultType="_int">
+		SELECT COUNT(memberId) FROM TBL_MEMBER
+		WHERE memberId = #{memberId} AND memberPw = #{memberPw}
 	</select>
 	
 </mapper>

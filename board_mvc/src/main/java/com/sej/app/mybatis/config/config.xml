@@ -3,7 +3,7 @@
 
 <configuration>
 	<typeAliases>
-		
+		<typeAlias type="com.sej.app.member.vo.MemberVO" alias="member"/>
 	</typeAliases>
 
 	<environments default="development">
