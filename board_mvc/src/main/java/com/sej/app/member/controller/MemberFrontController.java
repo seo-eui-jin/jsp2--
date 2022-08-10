@@ -34,6 +34,8 @@ public class MemberFrontController extends HttpServlet {
 			} catch (Exception e) {
 				System.out.println("아이디 중복검사 오류" + e);
 			}
+		} else if(command.equals("/member/MemberJoinOk.me")) {
+			
 		}
 		
 		if(forward != null) {
