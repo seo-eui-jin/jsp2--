@@ -7,6 +7,13 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
 <title>회원가입</title>
+<style>
+	input[type='button'],input[type='submit']{border-radius: 0;}
+	textarea{resize:none;}
+	div.preview{overflow:hidden;}
+	div.preview img{object-fit : cover;}
+	
+</style>
 </head>
 <body class="is-preload">
 	<!-- Page Wrapper -->

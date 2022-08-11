@@ -16,6 +16,9 @@ public class MemberCheckIdOk implements Action{
 
 	@Override
 	public ActionForward excute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+		req.setCharacterEncoding("UTF-8");
+		resp.setCharacterEncoding("UTF-8");
+		
 		String memberId = req.getParameter("memberId");
 		MemberDAO dao = new MemberDAO();
 		JSONObject obj = new JSONObject();
