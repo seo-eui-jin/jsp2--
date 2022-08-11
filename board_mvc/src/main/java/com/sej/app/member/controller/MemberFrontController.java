@@ -35,7 +35,15 @@ public class MemberFrontController extends HttpServlet {
 				System.out.println("아이디 중복검사 오류" + e);
 			}
 		} else if(command.equals("/member/MemberJoinOk.me")) {
-			
+			try {
+				forward = new MemberJoinOk().excute(req, resp);
+			} catch (Exception e) {
+				System.out.println("회원가입 오류" + e);
+			}
+		}else if(command.equals("/member/MemberLogin.me")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/app/member/login.jsp");
 		}
 		
 		if(forward != null) {
