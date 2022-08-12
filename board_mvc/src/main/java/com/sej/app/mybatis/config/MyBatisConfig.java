@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class MyBatisConfig {
 	private static SqlSessionFactory sqlsession_f;
+	
 	static {
 		try {
 			String resource = "./com/sej/app/mybatis/config/config.xml";
@@ -20,7 +21,9 @@ public class MyBatisConfig {
 			throw new RuntimeException("초기화 문제 발생, MybatisConfig.java");
 		}
 	}
+
 	public static SqlSessionFactory getSqlsession_f() {
 		return sqlsession_f;
-	}	
+	}
 }
+

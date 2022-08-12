@@ -13,7 +13,7 @@
 <nav id="menu">
 	<ul class="actions stacked">
 		<li>
-			<a href="${pageContext.request.contextPath}/member/Memberjoin.me">회원가입</a>
+			<a href="${pageContext.request.contextPath}/member/MemberJoin.me">회원가입</a>
 		</li>
 		<c:choose>
 		<c:when test="${sessionId eq null}">

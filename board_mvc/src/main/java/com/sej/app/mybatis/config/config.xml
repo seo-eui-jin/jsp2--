@@ -5,7 +5,6 @@
 	<typeAliases>
 		<typeAlias type="com.sej.app.member.vo.MemberVO" alias="member"/>
 	</typeAliases>
-
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC"/>
@@ -17,7 +16,6 @@
 			</dataSource>
 		</environment>
 	</environments>
-	
 	<mappers>
 		<mapper resource="com/sej/app/mybatis/sql/member.xml"/>
 	</mappers>

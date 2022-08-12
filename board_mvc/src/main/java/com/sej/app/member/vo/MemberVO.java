@@ -94,6 +94,9 @@ public class MemberVO {
 	public void setMemberAddressEtc(String memberAddressEtc) {
 		this.memberAddressEtc = memberAddressEtc;
 	}
-	
-	
 }
+
+
+
+
+

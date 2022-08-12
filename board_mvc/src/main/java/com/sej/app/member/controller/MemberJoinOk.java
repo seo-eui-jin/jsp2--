@@ -11,7 +11,7 @@ import com.sej.app.member.vo.MemberVO;
 public class MemberJoinOk implements Action {
 
 	@Override
-	public ActionForward excute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		
@@ -27,7 +27,7 @@ public class MemberJoinOk implements Action {
 		vo.setMemberZipcode(req.getParameter("memberZipcode"));
 		vo.setMemberAddress(req.getParameter("memberAddress"));
 		vo.setMemberAddressDetail(req.getParameter("memberAddressDetail"));
-		vo.setMemberAddressEtc(req.getParameter("memberEtc"));
+		vo.setMemberAddressEtc(req.getParameter("memberAddressEtc"));
 		
 		dao.join(vo);
 		
@@ -35,7 +35,6 @@ public class MemberJoinOk implements Action {
 		forward.setRedirect(true);
 		//어디로 보낼 것인가
 		forward.setPath(req.getContextPath() + "/member/MemberLogin.me");
-		
 		return forward;
 	}
 

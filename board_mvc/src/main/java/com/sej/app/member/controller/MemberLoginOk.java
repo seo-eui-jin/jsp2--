@@ -11,12 +11,12 @@ import com.sej.app.member.dao.MemberDAO;
 public class MemberLoginOk implements Action {
 
 	@Override
-	public ActionForward excute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		
-		MemberDAO dao = new MemberDAO();
 		ActionForward forward = new ActionForward();
+		MemberDAO dao = new MemberDAO();
 		HttpSession session = req.getSession();
 		
 		String memberId = req.getParameter("memberId");
@@ -26,12 +26,11 @@ public class MemberLoginOk implements Action {
 		
 		if(dao.login(memberId, memberPw)) {
 			session.setAttribute("sessionId", memberId);
-			forward.setPath(req.getContextPath() + "/board/BoardList.bo");
+			forward.setPath(req.getContextPath() + "/borad/BoradList.bo");
 		}else {
 			forward.setPath(req.getContextPath() + "/member/MemberLogin.me?code=false");
 		}
 		
 		return forward;
 	}
-
 }

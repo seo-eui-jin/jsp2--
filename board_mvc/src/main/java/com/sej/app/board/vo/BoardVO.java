@@ -57,6 +57,4 @@ public class BoardVO {
 	public void setReadCount(int readCount) {
 		this.readCount = readCount;
 	}
-	
-	
 }

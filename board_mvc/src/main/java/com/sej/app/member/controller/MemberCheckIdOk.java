@@ -1,6 +1,5 @@
 package com.sej.app.member.controller;
 
-
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +14,7 @@ import com.sej.app.member.dao.MemberDAO;
 public class MemberCheckIdOk implements Action{
 
 	@Override
-	public ActionForward excute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		
@@ -23,18 +22,16 @@ public class MemberCheckIdOk implements Action{
 		MemberDAO dao = new MemberDAO();
 		JSONObject obj = new JSONObject();
 		PrintWriter out = resp.getWriter();
-		
+
 		if(dao.checkId(memberId)) {
 			obj.put("status", "not-ok");
-		} else {
+		}else {
 			obj.put("status", "ok");
 		}
 		
 		out.println(obj.toJSONString());
 		out.close();
 		return null;
-		
 	}
 	
-
 }
