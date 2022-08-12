@@ -40,10 +40,20 @@ public class MemberFrontController extends HttpServlet {
 			} catch (Exception e) {
 				System.out.println("회원가입 오류" + e);
 			}
+		} else if(command.equals("/member/MemberLoginOk.me")) {
+				try {
+					forward = new MemberLoginOk().excute(req, resp);
+				} catch (Exception e) {
+					System.out.println("회원가입 오류" + e);
+				}
 		}else if(command.equals("/member/MemberLogin.me")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("/app/member/login.jsp");
+		}else if(command.equals("/app/MemberJoin.me")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/app/member/join.jsp");
 		}
 		
 		if(forward != null) {
