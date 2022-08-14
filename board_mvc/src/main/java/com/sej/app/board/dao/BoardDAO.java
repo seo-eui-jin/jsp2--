@@ -26,4 +26,9 @@ public class BoardDAO {
 		
 		return sqlSession.selectList("Board.getList", pageMap);
 	}
+	
+	//게시글 전체 개수
+	public int getTotal() {
+		return sqlSession.selectOne("Board.getTotal");
+	}
 }
