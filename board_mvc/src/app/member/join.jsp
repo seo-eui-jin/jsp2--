@@ -131,7 +131,7 @@
 								<input type="text" name="memberAddressEtc" id="memberAddressEtc" class="postcodify_extra_info" value="">
 								<br>
 								<div class="col-12" style="margin-top:8%">
-									<ul class="actions" style="display:felx; justify-content:center;">
+									<ul class="actions" style="display:flex; justify-content:center;">
 										<li>
 											<input type="button" value="완료" class="primary" onclick="formSubmit()">
 										</li>
